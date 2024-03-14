@@ -1,6 +1,6 @@
 name: 'Bark Action'
 description: 'An action for bark'
-author: 'Yuanhao Ji <jiyuanhao@apache.org>'
+author: 'Yihan G <crownor@nlp.ac> forked from Yuanhao Ji <jiyuanhao@apache.org>'
 branding:
   icon: 'message-circle'
   color: 'red'
@@ -32,6 +32,16 @@ inputs:
   copy:
     description: Content copied to clipboard
     required: false
+  group:
+    description: 指定推送消息分组，可在历史记录中按分组查看推送
+    required: false
+  icon:
+    description: 指定推送消息图标
+    required: false
+  level:
+    description: 设置时效性通知
+    required: false
+
 runs:
   using: "composite"
   steps:
@@ -48,3 +58,6 @@ runs:
         INPUT_URL: ${{ inputs.url }}
         INPUT_AUTOMATICALLY_COPY: ${{ inputs.automaticallyCopy }}
         INPUT_COPY: ${{ inputs.copy }}
+        INPUT_GROUP: ${{ inputs.group }}
+        INPUT_ICON: ${{ inputs.icon }}
+        INPUT_LEVEL: ${{ inputs.level }}
