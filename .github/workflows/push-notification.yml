@@ -17,8 +17,8 @@ jobs:
       - name: Push notification
         uses: ./
         with:
-          key: ${{ env.KEY }}
-          host: ${{ env.HOST }}
+          key: ${{ secrets.KEY }}
+          host: ${{ secrets.HOST }}
           title: Message title
           body: Message body
           sound: alarm
