@@ -12,6 +12,8 @@
     <a href="https://github.com/marketplace/actions/bark-action"><b>GitHub Marketplace</b></a>
 </p>
 
+Forked from [shink/bark-action](https://github.com/shink/bark-action), add supports for more args in Bark
+
 A GitHub Action that pushes notifications via [Finb/Bark](https://github.com/Finb/Bark).
 
 ## Usage
@@ -27,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Push notification
-        uses: shink/bark-action@v2
+        uses: Crownor/bark-action@V3.0
         with:
           key: ${{ secrets.KEY }}       # Your secret key, it is required
           host: ${{ secrets.HOST }}     # Your Bark host, the default is 'https://api.day.app'
@@ -50,6 +52,9 @@ jobs:
 - `url`: The address that will be redirected to the url (when sending, URL parameters need to be encoded)
 - `automaticallyCopy`: When this parameter is carried, the content will be automatically copied to the clipboard
 - `copy`: When carrying this parameter, only the value of this parameter will be copied
+- `group`: Specify the group of push messages. Push messages can be viewed by group in the history.
+- `icon`: Specify push message icon
+- `level`: Set timely notifications
 
 For more information, please check out [Finb/Bark](https://github.com/Finb/Bark).
 

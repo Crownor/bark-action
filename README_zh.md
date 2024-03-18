@@ -12,6 +12,9 @@
     <a href="https://github.com/marketplace/actions/bark-action"><b>GitHub Marketplace</b></a>
 </p>
 
+
+基于 [shink/bark-action](https://github.com/shink/bark-action)做了一点参数上的完善
+
 一个通过 [Finb/Bark](https://github.com/Finb/Bark) 推送通知的 GitHub Action。
 
 ## 使用
@@ -27,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Push notification
-        uses: shink/bark-action@v2
+        uses: Crownor/bark-action@V3.0
         with:
           key: ${{ secrets.KEY }}       # Your secret key, it is required
           host: ${{ secrets.HOST }}     # Your Bark host, the default is 'https://api.day.app'
@@ -35,7 +38,7 @@ jobs:
           body: Message body
           sound: alarm
           isArchive: 1
-          url: https://yuanhaoji.com
+          url: https://baidu.com
           automaticallyCopy: 1
           copy: Content copied to clipboard
 ```
@@ -50,6 +53,10 @@ jobs:
 - `url`: 将跳转到 url 的地址（发送时，URL 参数需要编码）
 - `automaticallyCopy`: 携带该参数时，将自动复制推送内容到剪贴板
 - `copy`: 携带该参数时，只复制该参数的值
+- `group`: 指定推送消息分组，可在历史记录中按分组查看推送
+- `icon`: 指定推送消息图标
+- `level`: 设置时效性通知
+
 
 更多详情请查看 [Finb/Bark](https://github.com/Finb/Bark)。
 
